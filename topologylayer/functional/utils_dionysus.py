@@ -35,7 +35,7 @@ def top_batch_cost(gen_imgs, diagramlayer, filtration):
         top_cost(x_i.view(-1), diagramlayer, filtration) for i, x_i in enumerate(torch.unbind(gen_imgs, dim=axis), 0)
     ], dim=axis)
     avg = torch.mean(costs.view(-1))
-    print("top_batch_cost", "time: ", time.time() - start_time, "cost: ", avg)
+#     print("top_batch_cost", "time: ", time.time() - start_time, "cost: ", avg)
     return avg
     ''' *** End Topology *** '''
 
@@ -128,6 +128,6 @@ def top_batch_features(input, diagramlayer, filtration, dim=1):
         top_features(x_i.view(-1), diagramlayer, filtration, dim) for i, x_i in enumerate(torch.unbind(input, dim=axis), 0)
     ], dim=axis)
     #avg = torch.mean(costs.view(-1))
-    print("feats", "time: ", time.time() - start_time)
+#     print("feats", "time: ", time.time() - start_time)
     #print feats.shape
     return feats
